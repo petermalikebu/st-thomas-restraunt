@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>St. Thomas Square Restaurant</title>
+    <link rel="stylesheet" href="customer-styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <img src="images/logo.png" alt="Event Rental Service Logo" class="logo">
+            <div class="nav-brand">
+                <i class="fas fa-utensils"></i>
+                <span>St. Thomas Square</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#menu" class="nav-link">Menu</a></li>
+                <li><a href="#events" class="nav-link">Events</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button id="cartBtn" class="cart-btn">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span id="cartCount" class="cart-count">0</span>
+                </button>
+                <button class="mobile-menu-btn" id="mobileMenuBtn" title="Open mobile menu" aria-label="Open mobile menu">
+                    <i class="fas fa-bars"></i>
+                    <span class="sr-only">Open mobile menu</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Welcome to St. Thomas Square</h1>
+            <p class="hero-subtitle">Experience culinary excellence in the heart of the city</p>
+            <div class="hero-actions">
+                <button class="btn btn-primary" onclick="scrollToSection('menu')">
+                    <i class="fas fa-book-open"></i> View Menu
+                </button>
+                <button class="btn btn-outline" onclick="scrollToSection('events')">
+                    <i class="fas fa-calendar-alt"></i> Upcoming Events
+                </button>
+            </div>
+        </div>
+        <div class="hero-image">
+            <div class="hero-placeholder">
+                <i class="fas fa-utensils"></i>
+                <p>Restaurant Image</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="menu-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Menu</h2>
+                <p>Discover our carefully crafted dishes made with the finest ingredients</p>
+            </div>
+            
+            <!-- Menu Filters -->
+            <div class="menu-filters">
+                <button class="filter-btn active" data-category="">All</button>
+                <button class="filter-btn" data-category="appetizer">Appetizers</button>
+                <button class="filter-btn" data-category="main">Main Courses</button>
+                <button class="filter-btn" data-category="dessert">Desserts</button>
+                <button class="filter-btn" data-category="beverage">Beverages</button>
+            </div>
+
+            <!-- Menu Items -->
+            <div id="menuGrid" class="menu-grid">
+                <!-- Menu items will be loaded here -->
+            </div>
+            <div class="gallery">
+            <h2>some of our dishes </h2>
+            <img src="images/chips with cambo.jpeg" alt="Chair 1">
+            <img src="images/chips+chiken.jpeg" alt="Chair 2">
+            <img src="images/nsima+chambo.jpeg" alt="Chair 3">
+            <img src="images/rice+chambo.jpeg" alt="Chair 4">
+            <img src="images/rice+grilled.jpeg" alt="Chair 5">
+            <img src="images/t-bone +chips.jpeg" alt="Chair 6">
+            <img src="images/mang'ina.jpeg" alt="Chair 7">
+            <img src="images/samusa.jpeg" alt="Chair 8">
+            <img src="images/yakumtengo.jpeg" alt="Chair 9">
+            <img src="images/soda.jpeg" alt="Chair 10">
+        </div>
+        </div>
+    </section>
+
+    <!-- Events Section -->
+    <section id="events" class="events-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Upcoming Events</h2>
+                <p>Join us for special occasions and memorable experiences</p>
+            </div>
+            <div id="eventsGrid" class="events-grid">
+                <!-- Events will be loaded here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>About St. Thomas Square</h2>
+                    <p>Located in  Chikwawa,Dyelatu be, St. Thomas Square Restaurant has been serving exceptional cuisine for over a decade. Our commitment to quality ingredients, innovative recipes, and outstanding service has made us a beloved destination for food enthusiasts.</p>
+                    
+                    <div class="about-features">
+                        <div class="feature">
+                            <i class="fas fa-award"></i>
+                            <h3>Award-Winning Cuisine</h3>
+                            <p>Recognized for culinary excellence and innovation</p>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-leaf"></i>
+                            <h3>Fresh Ingredients</h3>
+                            <p>Locally sourced, organic ingredients whenever possible</p>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-heart"></i>
+                            <h3>Passionate Service</h3>
+                            <p>Dedicated team committed to your dining experience</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-info">
+                        <h3>Visit Us</h3>
+                        <div class="contact-details">
+                            <div class="contact-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span> St. Thomas Square, Dyelatu</span>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-phone"></i>
+                                <span>+265 995 33 27 78</span>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-envelope"></i>
+                                <span>st.thomasinvestments@gamil.com</span>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-clock"></i>
+                                <span>Tue-Sun: 11:00 AM - 10:00 PM</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <div class="image-placeholder">
+                        <i class="fas fa-building"></i>
+                        <p>Restaurant Interior</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Shopping Cart Sidebar -->
+    <div id="cartSidebar" class="cart-sidebar">
+        <div class="cart-header">
+            <h3><i class="fas fa-shopping-cart"></i> Your Order</h3>
+            <button id="closeCartBtn" class="close-btn" title="Close Cart Sidebar" aria-label="Close Cart Sidebar">
+                <i class="fas fa-times" aria-hidden="true"></i>
+                <span class="sr-only">Close</span>
+            </button>
+        </div>
+        <div id="cartItems" class="cart-items">
+            <!-- Cart items will be displayed here -->
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <strong>Total: $<span id="cartTotal">0.00</span></strong>
+            </div>
+            <button id="checkoutBtn" class="btn btn-primary btn-full">
+                <i class="fas fa-credit-card"></i> Proceed to Checkout
+            </button>
+        </div>
+    </div>
+
+    <!-- Cart Overlay -->
+    <div id="cartOverlay" class="cart-overlay"></div>
+
+    <!-- Checkout Modal -->
+    <div id="checkoutModal" class="modal-overlay">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Complete Your Order</h3>
+                <button id="closeCheckoutBtn" class="close-btn" title="Close Checkout Modal" aria-label="Close Checkout Modal">
+                    <i class="fas fa-times" aria-hidden="true"></i>
+                    <span class="sr-only">Close</span>
+                </button>
+            </div>
+            <form id="checkoutForm" class="checkout-form">
+                <div class="form-section">
+                    <h4>Customer Information</h4>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="customerName">Full Name *</label>
+                            <input type="text" id="customerName" name="customer_name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="customerPhone">Phone Number</label>
+                            <input type="tel" id="customerPhone" name="customer_phone">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="customerEmail">Email Address</label>
+                        <input type="email" id="customerEmail" name="customer_email">
+                    </div>
+                </div>
+                
+                <div class="form-section">
+                    <h4>Order Details</h4>
+                    <div class="form-group">
+                        <label for="orderType">Order Type *</label>
+                        <select id="orderType" name="order_type" required>
+                            <option value="dine_in">Dine In</option>
+                            <option value="takeaway">Takeaway</option>
+                            <option value="delivery">Delivery</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="specialInstructions">Special Instructions</label>
+                        <textarea id="specialInstructions" name="special_instructions" rows="3" placeholder="Any special requests or dietary requirements..."></textarea>
+                    </div>
+                </div>
+
+                <div class="order-summary">
+                    <h4>Order Summary</h4>
+                    <div id="checkoutItems" class="checkout-items"></div>
+                    <div class="checkout-total">
+                        <strong>Total: MWK<span id="checkoutTotal">0.00</span></strong>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-full">
+                    <i class="fas fa-check"></i> Place Order
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Admin Portal Link -->
+    <div class="floating-link">
+        <a href="index.html" class="btn btn-secondary">
+            <i class="fas fa-cog"></i> Admin Portal
+        </a>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3><i class="fas fa-utensils"></i> St. Thomas Square</h3>
+                    <p>Experience culinary excellence in the heart of the Dyelatu</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>123 St. Thomas Square<br>Chikwawa,Dyelatu</p>
+                    <p>Phone: +265 995 33 27 78</p>
+                    <p>Email:st.thomasinvestments@gamil.com</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Hours</h4>
+                    <p>Tuesday - Sunday<br>11:00 AM - 10:00 PM</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="#" title="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 St. Thomas Square Restaurant. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="customer-script.js"></script>
+</body>
+</html>
+

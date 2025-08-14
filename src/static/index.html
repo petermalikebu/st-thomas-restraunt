@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>St. Thomas Square Restaurant - Admin Portal</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Login Screen -->
+    <div id="loginScreen" class="screen active">
+        <div class="login-container">
+            <div class="login-card">
+                <div class="login-header">
+                    <a href="https://st-thomas-square-site-2.onrender.com" target="_blank" style="text-decoration: none; color: inherit;">
+                        <h1><i class="fas fa-utensils"></i> St. Thomas Square</h1>
+                    </a>
+                    <p>Restaurant Management System</p>
+                </div>
+
+                <form id="loginForm" class="login-form">
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <input type="text" id="username" name="username" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-sign-in-alt"></i> Login
+                    </button>
+                </form>
+                <div class="login-footer">
+                    <p>Don't have an account? <a href="#" id="showRegister">Register here</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Registration Screen -->
+    <div id="registerScreen" class="screen">
+        <div class="login-container">
+            <div class="login-card">
+                <div class="login-header">
+                    <h1><i class="fas fa-user-plus"></i> Create Account</h1>
+                    <p>Register as Admin or Chef</p>
+                </div>
+                <form id="registerForm" class="login-form">
+                    <div class="form-group">
+                        <label for="regUsername">Username</label>
+                        <input type="text" id="regUsername" name="username" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="regEmail">Email</label>
+                        <input type="email" id="regEmail" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="regPassword">Password</label>
+                        <input type="password" id="regPassword" name="password" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="regRole">Role</label>
+                        <select id="regRole" name="role" required>
+                            <option value="admin">Admin</option>
+                            <option value="chef">Chef</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-user-plus"></i> Register
+                    </button>
+                </form>
+                <div class="login-footer">
+                    <p>Already have an account? <a href="#" id="showLogin">Login here</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Dashboard -->
+    <div id="dashboardScreen" class="screen">
+        <!-- Navigation -->
+        <nav class="navbar">
+            <div>
+            <img src="images/logo.png" alt="St. Thomas Square Restaurant logo featuring a chef hat and utensils, with the restaurant name displayed in bold text, set against a welcoming and professional background" class="logo">
+            </div>
+            <div class="nav-brand">
+                <i class="fas fa-utensils"></i>
+                <span>St. Thomas Square</span>
+            </div>
+            <div class="nav-user">
+                <span id="userInfo"></span>
+                <button id="logoutBtn" class="btn btn-outline">
+                    <i class="fas fa-sign-out-alt"></i> Logout
+                </button>
+            </div>
+        </nav>
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <ul class="sidebar-menu">
+                <li><a href="#" data-section="dashboard" class="active">
+                    <i class="fas fa-tachometer-alt"></i> Dashboard
+                </a></li>
+                <li><a href="#" data-section="menu">
+                    <i class="fas fa-book-open"></i> Menu Management
+                </a></li>
+                <li><a href="#" data-section="events">
+                    <i class="fas fa-calendar-alt"></i> Events
+                </a></li>
+                <li><a href="#" data-section="inventory">
+                    <i class="fas fa-boxes"></i> Inventory
+                </a></li>
+                <li><a href="#" data-section="orders">
+                    <i class="fas fa-receipt"></i> Orders
+                </a></li>
+                <li id="usersMenuItem"><a href="#" data-section="users">
+                    <i class="fas fa-users"></i> User Management
+                </a></li>
+            </ul>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Dashboard Section -->
+            <section id="dashboardSection" class="content-section active">
+                <div class="section-header">
+                    <h2><i class="fas fa-tachometer-alt"></i> Dashboard</h2>
+                </div>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-receipt"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3 id="totalOrders">0</h3>
+                            <p>Total Orders</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3 id="pendingOrders">0</h3>
+                            <p>Pending Orders</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-dollar-sign"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3 id="totalRevenue">MWK0</h3>
+                            <p>Total Revenue</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-exclamation-triangle"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3 id="lowStockItems">0</h3>
+                            <p>Low Stock Items</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="dashboard-content">
+                    <div class="recent-orders">
+                        <h3>Recent Orders</h3>
+                        <div id="recentOrdersList" class="orders-list"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Menu Management Section -->
+            <section id="menuSection" class="content-section">
+                <div class="section-header">
+                    <h2><i class="fas fa-book-open"></i> Menu Management</h2>
+                    <button id="addMenuItemBtn" class="btn btn-primary">
+                        <i class="fas fa-plus"></i> Add Menu Item
+                    </button>
+                </div>
+                <div class="filters">
+                    <select id="categoryFilter">
+                        <option value="">All Categories</option>
+                    </select>
+                    <input type="text" id="menuSearch" placeholder="Search menu items...">
+                </div>
+                <div id="menuItemsList" class="items-grid"></div>
+            </section>
+
+            <!-- Events Section -->
+            <section id="eventsSection" class="content-section">
+                <div class="section-header">
+                    <h2><i class="fas fa-calendar-alt"></i> Events Management</h2>
+                    <button id="addEventBtn" class="btn btn-primary">
+                        <i class="fas fa-plus"></i> Add Event
+                    </button>
+                </div>
+                <div id="eventsList" class="items-grid"></div>
+            </section>
+
+            <!-- Inventory Section -->
+            <section id="inventorySection" class="content-section">
+                <div class="section-header">
+                    <h2><i class="fas fa-boxes"></i> Inventory Management</h2>
+                    <button id="addInventoryItemBtn" class="btn btn-primary">
+                        <i class="fas fa-plus"></i> Add Item
+                    </button>
+                </div>
+                <div class="filters">
+                    <select id="inventoryFilter">
+                        <option value="">All Categories</option>
+                    </select>
+                    <button id="lowStockFilter" class="btn btn-outline">
+                        <i class="fas fa-exclamation-triangle"></i> Low Stock Only
+                    </button>
+                </div>
+                <div id="inventoryItemsList" class="items-grid"></div>
+            </section>
+
+            <!-- Orders Section -->
+            <section id="ordersSection" class="content-section">
+                <div class="section-header">
+                    <h2><i class="fas fa-receipt"></i> Orders Management</h2>
+                </div>
+                <div class="filters">
+                    <select id="orderStatusFilter">
+                        <option value="">All Statuses</option>
+                        <option value="pending">Pending</option>
+                        <option value="confirmed">Confirmed</option>
+                        <option value="preparing">Preparing</option>
+                        <option value="ready">Ready</option>
+                        <option value="completed">Completed</option>
+                        <option value="cancelled">Cancelled</option>
+                    </select>
+                </div>
+                <div id="ordersList" class="orders-list"></div>
+            </section>
+
+            <!-- Users Section (Admin Only) -->
+            <section id="usersSection" class="content-section">
+                <div class="section-header">
+                    <h2><i class="fas fa-users"></i> User Management</h2>
+                    <button id="addUserBtn" class="btn btn-primary">
+                        <i class="fas fa-user-plus"></i> Add User
+                    </button>
+                </div>
+                <div id="usersList" class="items-grid"></div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Modals -->
+    <div id="modalOverlay" class="modal-overlay">
+        <div id="modalContent" class="modal-content"></div>
+    </div>
+
+    <!-- Customer Portal Link -->
+    <div id="customerPortalLink" class="floating-link">
+        <a href="customer.html" target="_blank" class="btn btn-secondary">
+            <i class="fas fa-external-link-alt"></i> Customer Portal
+        </a>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
